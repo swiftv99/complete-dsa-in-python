@@ -9,9 +9,7 @@ missing_number([1, 2, 3, 4, 6], 6) # 5
 
 def missing_number(arr, n):
     total = n * (n+1) // 2
-    
     sum_of_array = sum(arr)
-    
     return total - sum_of_array # missing_value
 
 print(missing_number([1, 2, 3, 4, 6], 6))
