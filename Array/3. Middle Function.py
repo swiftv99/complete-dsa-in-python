@@ -7,8 +7,10 @@ middle(myList)  # [2,3]
 """
 
 def middle(lst):
-    # TODO
     return lst[1:-1]
+
+my_list = [1, 2, 3, 4]
+print(middle(my_list))  # Output: [2, 3]
 
 """
 Time Complexity:
