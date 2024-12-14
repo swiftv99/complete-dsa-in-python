@@ -7,8 +7,7 @@ dict1 = {'a': 1, 'b': 2, 'c': 3}
 dict2 = {'b': 3, 'c': 4, 'd': 5}
 merge_dicts(dict1, dict2)
 
-Output:
-{'a': 1, 'b': 5, 'c': 7, 'd': 5}
+Output: {'a': 1, 'b': 5, 'c': 7, 'd': 5}
 """
 
 def merge_dicts(dict1, dict2):

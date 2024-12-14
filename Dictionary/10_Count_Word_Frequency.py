@@ -7,8 +7,7 @@ Example:
 words = ['apple', 'orange', 'banana', 'apple', 'orange', 'apple'] 
 count_word_frequency(words) 
 
-Output:
-{'apple': 3, 'orange': 2, 'banana': 1}
+Output: {'apple': 3, 'orange': 2, 'banana': 1}
 """
 
 def count_word_frequency(words):
