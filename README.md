@@ -13,9 +13,10 @@ This repository contains solutions to coding exercises from the Udemy course: **
 ```
 .
 ├── Array/
-├── String/
+├── Dictionary/
 ├── Linked_List/
 ├── Tree/
+├── Tuple/
 ├── Graph/
 ├── README.md
 ```
