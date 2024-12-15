@@ -28,4 +28,40 @@ A **linked list** is a collection of nodes connected sequentially. We'll cover h
 2. Add new nodes to the list.
 3. Traverse the list to access its elements.
 
----
+```python
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self.length = 0
+
+    def __str__(self):
+        result = ""
+        temp_pointer = self.head
+        while temp_pointer is not None:
+            result += str(temp_pointer.value)
+            if temp_pointer.next is not None:
+                result += " -> "
+            temp_pointer = temp_pointer.next
+        return result
+
+    def append(self, value):
+        new_node = Node(value)
+        if self.length == 0:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.next = new_node
+            self.tail = new_node
+        self.length += 1
+
+    def prepend(self, value):
+        new_node = Node(value)
+        if self.length == 0:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
+        self.length += 1
+```

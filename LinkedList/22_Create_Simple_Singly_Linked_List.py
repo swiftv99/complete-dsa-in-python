@@ -22,6 +22,10 @@ class LinkedList:
         self.tail = new_node
         self.length = 1
         
+new_linked_list = LinkedList(10)
+print(new_linked_list.head.value)
+print(new_linked_list.tail.value)
+
 """
 Time and Space Complexity
 
