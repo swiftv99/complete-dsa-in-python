@@ -34,78 +34,110 @@ class LinkedList:
         self.head = None
         self.tail = None
         self.length = 0
-
-    def __str__(self):
-        result = ""
-        temp_pointer = self.head
-        while temp_pointer is not None:
-            result += str(temp_pointer.value)
-            if temp_pointer.next is not None:
-                result += " -> "
-            temp_pointer = temp_pointer.next
-        return result
-
-    def append(self, value):
-        new_node = Node(value)
-        if self.length == 0:
-            self.head = new_node
-            self.tail = new_node
-        else:
-            self.tail.next = new_node
-            self.tail = new_node
-        self.length += 1
-
-    def prepend(self, value):
-        new_node = Node(value)
-        if self.length == 0:
-            self.head = new_node
-            self.tail = new_node
-        else:
-            new_node.next = self.head
-            self.head = new_node
-        self.length += 1
-
-    def insert(self, index, value):
-        new_node = Node(value)
-        if index < 0 or index > self.length:
-            return False
-        elif self.length == 0:
-            self.head = new_node
-            self.tail = new_node
-        elif index == 0:
-            new_node.next = self.head
-            self.head = new_node
-        else:
-            temp_pointer = self.head
-            for _ in range(index-1):
-                temp_pointer = temp_pointer.next
-            new_node.next = temp_pointer.next
-            temp_pointer.next = new_node
-        self.length += 1
-        return True
-
-    def remove(self, index):
-        if index < 0 or index >= self.length or self.length == 0:
-            return None
-        elif index == 0:
-            popped_node = self.head
-            if self.length == 1:
-                self.head = self.tail = None
-            else:
-                self.head = popped_node.next
-                popped_node.next = None
-            self.length -= 1
-            return popped_node
-        else:
-            prev_node = self.head
-            for _ in range(index-1):
-                prev_node = prev_node.next
-
-            removed_node = prev_node.next
-            if removed_node.next is None:
-                self.tail = prev_node
-            prev_node.next = removed_node.next
-            removed_node.next = None
-            self.length -= 1
-            return removed_node
 ```
+
+---
+
+**\_\_str\_\_()** method
+
+```python
+def __str__(self):
+    result = ""
+    temp_pointer = self.head
+    while temp_pointer is not None:
+        result += str(temp_pointer.value)
+        if temp_pointer.next is not None:
+            result += " -> "
+        temp_pointer = temp_pointer.next
+    return result
+```
+
+---
+
+**append()** method
+
+```python
+def append(self, value):
+    new_node = Node(value)
+    if self.length == 0:
+        self.head = new_node
+        self.tail = new_node
+    else:
+        self.tail.next = new_node
+        self.tail = new_node
+    self.length += 1
+```
+
+---
+
+**prepend()** method
+
+```python
+def prepend(self, value):
+    new_node = Node(value)
+    if self.length == 0:
+        self.head = new_node
+        self.tail = new_node
+    else:
+        new_node.next = self.head
+        self.head = new_node
+    self.length += 1
+```
+
+---
+
+**insert()** method
+
+```python
+def insert(self, index, value):
+    new_node = Node(value)
+    if index < 0 or index > self.length:
+        return False
+    elif self.length == 0:
+        self.head = new_node
+        self.tail = new_node
+    elif index == 0:
+        new_node.next = self.head
+        self.head = new_node
+    else:
+        temp_pointer = self.head
+        for _ in range(index-1):
+            temp_pointer = temp_pointer.next
+        new_node.next = temp_pointer.next
+        temp_pointer.next = new_node
+    self.length += 1
+    return True
+```
+
+---
+
+**remove()** method
+
+```python
+def remove(self, index):
+    if index < 0 or index >= self.length or self.length == 0:
+        return None
+    elif index == 0:
+        popped_node = self.head
+        if self.length == 1:
+            self.head = self.tail = None
+        else:
+            self.head = popped_node.next
+            popped_node.next = None
+        self.length -= 1
+        return popped_node
+    else:
+        prev_node = self.head
+        for _ in range(index-1):
+            prev_node = prev_node.next
+
+        removed_node = prev_node.next
+        if removed_node.next is None:
+            self.tail = prev_node
+        prev_node.next = removed_node.next
+        removed_node.next = None
+        self.length -= 1
+        return removed_node
+```
+
+---
