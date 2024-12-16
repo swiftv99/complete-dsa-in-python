@@ -35,36 +35,30 @@ class LinkedList:
             self.tail = new_node
         self.length += 1
     
-    def pop_first(self):
-        if self.length == 0:
-            return None
-        
-        popped_node = self.head
-        if self.length == 1:
-            self.head = self.tail = None
-        else:
-            self.head = popped_node.next
-            popped_node.next = None
-        self.length -= 1
-        return popped_node
-    
     def remove(self, index):
-        if index < 0 or index >= self.length:
+        if index < 0 or index >= self.length or self.length == 0:
             return None
         elif index == 0:
-            return self.pop_first()
-        
-        prev_node = self.head
-        for _ in range(index-1):
-            prev_node = prev_node.next
-        
-        removed_node = prev_node.next
-        if removed_node.next is None:
-            self.tail = prev_node
-        prev_node.next = removed_node.next
-        removed_node.next = None
-        self.length -= 1
-        return removed_node
+            popped_node = self.head
+            if self.length == 1:
+                self.head = self.tail = None
+            else:
+                self.head = popped_node.next
+                popped_node.next = None
+            self.length -= 1
+            return popped_node
+        else:
+            prev_node = self.head
+            for _ in range(index-1):
+                prev_node = prev_node.next
+            
+            removed_node = prev_node.next
+            if removed_node.next is None:
+                self.tail = prev_node
+            prev_node.next = removed_node.next
+            removed_node.next = None
+            self.length -= 1
+            return removed_node
         
 linked_list = LinkedList()
 linked_list.append(10)
