@@ -36,8 +36,8 @@ This repository contains solutions to coding exercises from the Udemy course: **
 │   ├── 19_Concatenate.py
 │   ├── 20_Diagonal.py
 │   └── 21_Common_Elements.py
-├── 04_LinkedList
-│   ├── 01_SinglyLinkedList
+├── 04_Linked_List
+│   ├── 01_Singly_Linked_List
 │   │   ├── 22_Create_Simple_Singly_Linked_List.py
 │   │   ├── 23_Insertion_at_the_Beginning_of_a_Singly_Linked_List.py
 │   │   ├── 24_Insertion_at_the_End_of_a_Singly_Linked_List.py
@@ -47,11 +47,12 @@ This repository contains solutions to coding exercises from the Udemy course: **
 │   │   ├── 28_Remove_Duplicates_from_a_Singly_Linked_List.py
 │   │   ├── 29_Merge_Two_Sorted_Linked_List.py
 │   │   └── 30_Remove_Duplicates.py
-│   ├── 02_CircularSinglyLinkedList
-│   ├── 03_DoublyLinkedList
-│   ├── 04_CircularDoublyLinkedList
-│   ├── LinkedList.py
+│   ├── 02_Circular_Singly_Linked_List
+│   ├── 03_Doubly_Linked_List
+│   ├── 04_Circular_Doubly_Linked_List
+│   ├── Linked_List.py
 │   └── README.md
+├── Greedy_Algorithms
 ├── README.md
 └── script.py
 ```
